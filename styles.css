@@ -1,0 +1,100 @@
+/*
+	ID based selectors. These select the tag which has the attribute
+	id="...". There can only be A SINGLE tag which has that id on a given page.
+*/
+#pro-title{
+	color:green;
+	background-color:yellow;
+}
+#basic-title{
+	color:green;
+	background-color:yellow;
+}
+/*
+	Tag based selectors, these apply to all matching tags
+*/
+body{
+	background-color:blue;
+	font-size:16px;
+}
+button{
+	font-size:60pt;
+}
+img{
+	border-radius:50%;
+}
+/*
+This is an example of saying that a rule matches any one of those tags
+Note that it will combine with the selector above for body
+*/
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+
+/*
+	Class based selectors. These select all elements who have the attribute
+	class=" ... " which contains this class name. For example, the tag
+	<a class="pizza tomato menu orange" will match the .menu selector
+*/
+.pink-text{
+	color:pink;
+}
+.sub-title-line{
+	width:120px;
+	border:5px solid yellow;
+	border-radius: 4px;
+}
+.title{
+	color:black;
+	font-weight:bold;
+	background-color: lightgrey;
+	text-align:center;
+}
+.company-name{
+	color:blue;
+	font-weight:bold;
+	font-size:24pt;
+}
+/*
+This is still a class selector for the sub-title class, but it only applies to H1 tags
+*/
+h1.sub-title{
+	color: #f44336;    
+}
+.menu , .main-button{
+	color: red;
+    background-color: green;
+}
+/*
+This selector includes !important. This tells the browser that the rule 
+should override any other rule.
+*/
+.second-button{
+	color:pink !important;
+	background-color: black !important;
+}
+/*
+This selector includes an item state. It only applies if it matches and
+the item is being hovered
+*/
+button.main-button:hover{
+	color: green !important;
+    background-color: red !important;
+}
+button.second-button:hover{
+	color:black !important;
+	background-color: pink !important;
+}
+/*
+This is an example of a descendant selector. Read it backwards and replace the space with "with an ancestor"
+
+So, .two-cols img : select img tags "with an ancestor" of the class two-cols
+*/
+.two-cols img{
+	margin-bottom:-6px;
+	margin-top:16px;
+	opacity:0.8;
+	cursor:pointer;
+}
+.two-cols img:hover
+{
+	opacity:1;
+}
