@@ -10,23 +10,23 @@
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar menu w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-  <a href="javascript:void(0)"  class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-container">
-    <h3 class="company-name">Steve's<br>Websites</h3>
+    <h3 class="company-name">Mr. Steve's<br>Websites</h3>
   </div>
   <div class="w3-bar-block">
-    <a href="index.html" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
   </div>
 </nav>
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large menu w3-xlarge w3-padding">
-  <a href="javascript:void(0)" class="w3-button main-button w3-margin-right" >&#9776;</a>
-  <span class="company-name">Steve's Websites</span>
+  <a href="javascript:void(0)" class="w3-button main-button w3-margin-right" onclick="w3_open()" >&#9776;</a>
+  <span class="company-name">Mr. Steve's Websites</span>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large"  style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
@@ -35,7 +35,7 @@
   <div class="w3-container" id="intro" style="margin-top:80px">
 	<h1 class="w3-jumbo title">We design websites!</h1>
     <p class="pink-text">Making websites the world 'round!</p>
-    <p class="pink-text">At Steve's websites, we design websites for everyone in the world. We've already made 3 websites. There is this one, the one I made for my mom and the one we designed for that dude at the convenience store.
+    <p class="pink-text">At Mr. Steve's websites, we design websites for everyone in the world. We've already made 3 websites. There is this one, the one I made for my mom and the one we designed for that dude at the convenience store.
     </p>
   </div>
   
@@ -96,57 +96,31 @@
     </div>
   </div>
 
-  <!-- Packages / Pricing Tables -->
-  <div class="w3-container" id="packages" style="margin-top:75px">
-    <h1 class="w3-xxxlarge sub-title">Packages.</h1>
-    <hr class="sub-title-line w3-round">
-    <p class="pink-text">We offer two packages. They are both really expensive. You probably can't afford us. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
-  </div>
-
-  <div class="w3-row-padding">
-    <div class="w3-half w3-margin-bottom">
-      <ul class="w3-ul w3-light-grey w3-center">
-        <li id="basic-title" class="w3-xlarge w3-padding-32">Basic</li>
-        <li class="w3-padding-16">We call you</li>
-        <li class="w3-padding-16">We sit around and wonder</li>
-        <li class="w3-padding-16">I read a book</li>
-        <li class="w3-padding-16">I get a few markers and draw on your walls</li>
-        <li class="w3-padding-16">I run away</li>
-        <li class="w3-padding-16">
-          <h2>$ 199</h2>
-          <span class="w3-opacity">per website</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-        
-    <div class="w3-half">
-      <ul class="w3-ul w3-light-grey w3-center">
-        <li id="pro-title" class=" w3-xlarge w3-padding-32">Pro</li>
-        <li class="w3-padding-16">We call you at midnight</li>
-        <li class="w3-padding-16">We take notes on a piece of paper</li>
-        <li class="w3-padding-16">We do some instagram</li>
-        <li class="w3-padding-16">I play a few video games</li>
-        <li class="w3-padding-16">We share a pizza</li>
-        <li class="w3-padding-16">
-          <h2>$ 249</h2>
-          <span class="w3-opacity">per website</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button main-button w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-  </div> 
-
 <!-- End page content -->
 </div>
 
 <!-- W3.CSS Container -->
 <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
 
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
 
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
 </body>
 </html>
