@@ -1,4 +1,4 @@
-## Multi-Page Website for Black Boys Code Acadeny
+## Creating a multi-page website and some CSS - Black Boys Code Acadeny
 
 - With this project we will learn how to code a website with multiple pages
 - Contains a file with HTML mistakes for a review session as well as a starting page and `CSS` to be customized by students.
